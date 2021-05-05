@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HAWKWOOD WELL CURVES</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  </head>
+<body>
+<!--NAVIGATION BAR TO TOGGLE BETWEEN TABLE IMPORT AND SITE CURVES/TABLE-->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="index.html">HAWKWOOD</a> <!--MAKE HOME PAGE INTO A MAP THAT INCLUDES CUMS-->
+  <a class="navbar-brand" href="todaysImport.html">TODAY'S IMPORT</a>
+  <a class="navbar-brand" href="well.html">CURVES</a>
+</nav>
+<!--CURVES AND FILTERS-->
+<div class="container-fluid pt-5 pb-3">
+  <div class="row"><br></div>
+  <div class="row">
+  <div class="col-md-2">
+      <p>Press Ctrl to select multiple wells</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <select id="multiple-site-selection" size=17 multiple>
+            <option value="default" disabled>Select A Well</option> <!-- NEED TO HIGHLIGHT DEFAULT OPTION "SUMMARY"-->
+          </select>
+        </li>
+        <button id="clear-filter-btn" type="button" class="btn btn-primary">Clear Filter</button>
+      </ul>
+    </div>
+    <div class="col-md-10">
+      <div id=oilDeclineCurve></div>
+      <div id=gasDeclineCurve></div>
+      <div id=waterDeclineCurve></div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+<script src="static/all_production.json"></script>
+<script src="static/curves.js"></script>   
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HAWKWOOD LOCATIONS & CUMS</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://d3js.org/d3.v5.min.js"></script> 
+  </head>
+<body>
+  <div class="wrapper">
+<!--NAVIGATION BAR TO TOGGLE BETWEEN TABLE IMPORT AND SITE CURVES/TABLE-->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="index.html">HAWKWOOD</a> <!--MAKE HOME PAGE INTO A MAP THAT INCLUDES CUMS-->
+  <a class="navbar-brand" href="todaysImport.html">TODAY'S IMPORT</a>
+  <a class="navbar-brand" href="well.html">CURVES</a>
+</nav>
+<div class=wrapper>
+  <div class="container-fluid pt-5 pb-3">
+    <div id="mapArea"></div>
+  </div>
+</div>
+
+<!-- TEST -->
+    <!-- Build the select boxes -->
+    <p>Single select tag</p>
+    <select  class="form-control" id = "select_single" >
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+      <option value="d">d</option>            
+    </select>   
+    <p id = "select_single_p"> </p>
+    <br>
+    <br>
+    <p>Multiple select tag</p>    
+    <select multiple class="form-control" id = "select_multiple" >
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+      <option value="d">d</option>            
+    </select>   
+
+<!--END OF TEST -->
+
+
+<script src="static/mapCUMS.js"></script>
+
+<!-- TEST -->
+
+<script>
+  // This works for a single select 
+  d3.select("#select_single")
+  .on("change",function(d){
+    console.log("this is the select single value " + this.value)
+  })
+  // But for multiple selects I can only extract the first value
+ d3.select("#select_multiple")
+  .on("change",function(d){this.value.len;
+    console.log("this is the select multiple value " + this.value )
+
+    console.log(d3.select('#select_multiple').node().value) 
+
+  })  
+
+
+  </script>
+
+
+<!--END OF TEST -->
+</body>
+</html>
