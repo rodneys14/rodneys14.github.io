@@ -110,18 +110,18 @@ function updateCurves(){
       var Oil = {};
       var Gas = {};
       var Water = {};
-      var test = []
+      var test = [];
 
       data.forEach((site) => {
         if (values.includes(site[0])) {
           Oil[site[8]] = Oil.hasOwnProperty(site[8])
-            ? Oil[site[8]] + site[2]
+            ? Oil[site[8]] + parseFloat(site[2])
             : 0;
           Gas[site[8]] = Gas.hasOwnProperty(site[8])
-            ? Gas[site[8]] + site[3]
+            ? Gas[site[8]] + parseFloat(site[3])
             : 0;
           Water[site[8]] = Water.hasOwnProperty(site[8])
-            ? Gas[site[8]] + site[4]
+            ? Gas[site[8]] + parseFloat(site[4])
             : 0;
         }
       })
