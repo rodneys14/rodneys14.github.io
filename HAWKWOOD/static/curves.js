@@ -114,9 +114,15 @@ function updateCurves(){
 
       data.forEach((site) => {
         if (values.includes(site[0])) {
-          Oil[site[8]] += site[2];
-          Gas[site[8]] += site[3];
-          Water[site[8]] += site[4];
+          Oil[site[8]] = Oil.hasOwnProperty(site[8])
+            ? Oil[site[8]] + site[2]
+            : 0;
+          Gas[site[8]] = Gas.hasOwnProperty(site[8])
+            ? Gas[site[8]] + site[3]
+            : 0;
+          Water[site[8]] = Water.hasOwnProperty(site[8])
+            ? Gas[site[8]] + site[4]
+            : 0;
         }
       })
 
