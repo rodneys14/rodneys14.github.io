@@ -96,8 +96,8 @@ function updateCurves(){
   var values = Array.from(dropdownMenu).map(({ value }) => value);
   console.log(values);
 
-  d3.json('./static/wellNames.json').then((data) => { //read in the wellNames.json file, which contains the array "names" with all the well names
-    wellOptions = data.names;
+  d3.json('./static/wellNames.json').then((wellName) => { //read in the wellNames.json file, which contains the array "names" with all the well names
+    wellOptions = wellName.names;
     forSelection = wellOptions.map((x) => ({id:x}))
     console.log(forSelection);
 
@@ -112,14 +112,15 @@ function updateCurves(){
       var Water = {};
       var test = []
 
-      new Promise ((resolve) => data.forEach((site) => {
+      data.forEach((site) => {
         if (values.includes(site[0])) {
           Oil[site[8]] += site[2];
           Gas[site[8]] += site[3];
           Water[site[8]] += site[4];
         }
-        resolve()
-      }))
+      })
+
+      console.log("----", Oil);
 
       site_date = Object.keys(Oil);
       requestedOil = site_date.map(date => Oil[date]);
